@@ -1,4 +1,7 @@
 <?php
+//include 'functions.php';
+//require 'functions.php';
+require_once 'functions.php';
 
 $contasCorrentes = [
   12345678910 => ["titular" => "Maria", "saldo" => 100],
@@ -14,19 +17,14 @@ $contasCorrentes[12345678916] = ["titular" => "Fábio", "saldo" => 999999];
 $contasCorrentes[12345678916]["saldo"] -= 1;
 
 
-function sacar(array $conta, float $valorASacar): array{
-  if($valorASacar > $conta["saldo"]){
-      echo "Saldo insuficiente!";
-  }else{
-    $conta["saldo"] -= $valorASacar;
-  }
-  return $conta;
-}
+
 
 $contasCorrentes[12345678916] = sacar($contasCorrentes[12345678916], 1);
 
+titularComLetrasMaiusculas($contasCorrentes[12345678910]);
+
 foreach($contasCorrentes as $cpf => $dadosDaConta){
-  echo "CPF: " . $cpf . ";" ." Titular: " . $dadosDaConta["titular"] . ";" . " Saldo: " . $dadosDaConta["saldo"] . PHP_EOL;
+  echo "CPF: $cpf - Titular: {$dadosDaConta["titular"]} - Saldo: {$dadosDaConta["saldo"]} \n" ;
   
 }
 
