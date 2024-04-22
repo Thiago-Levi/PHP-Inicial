@@ -7,13 +7,24 @@ $studentScores = [
 ];
 
 
+//ordenar pelas chaves
 ksort($studentScores);
 print_r($studentScores);
 
+//reverse
 arsort($studentScores);
 print_r($studentScores);
 
+//reverse
 krsort($studentScores);
 print_r($studentScores);
+
+//ordenar pelos valores
+asort($studentScores);
+print_r($studentScores);
+
+
+
+
 
 ?>
